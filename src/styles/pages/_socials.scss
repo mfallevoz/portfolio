@@ -1,0 +1,52 @@
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  width: 400px;
+  height: 260px;
+  border-radius: 20px;
+  color: $color-3;
+  margin: 15px;
+  padding: 35px;
+  text-decoration: none;
+  align-items: center;
+  cursor: pointer;
+  background-color: $white;
+  box-shadow: 0px 0px 15px rgb(69, 69, 69);
+
+  * {
+    display: flex;
+    justify-content: center;
+  }
+
+  svg {
+    width: 125px;
+    height: 125px;
+  }
+
+  .link {
+    transition: ease-out 0.4s;
+  }
+}
+
+.card:hover {
+  color: $color-1;
+  box-shadow: 0px 0px 15px $white;
+  transition: ease-out 0.4s;
+  background: linear-gradient($white, rgb(175, 175, 175));
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

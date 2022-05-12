@@ -1,0 +1,21 @@
+.articleWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 25px;
+  margin-left: 65px;
+  margin-right: 65px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  .leftColumn {
+    aspect-ratio: 16/9;
+    grid-column: 1/2;
+    background-color: aqua;
+  }
+
+  .rightColumn {
+    grid-column: 2/4;
+    background-color: red;
+  }
+}
