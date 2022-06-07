@@ -22,16 +22,17 @@ const About = () => {
         <p>
           As a sign of recognition, I wanted to go from playing video game, to
           program and design video game. I quickly realized that my expectation
-          wasn't as good as it would be.
+          wasn't as good as it would be. I've been tempted to be and UI/UX
+          Designer so I quit Paris to focus on myself and my new goals and then
+          move to Lyon in Epitech.
         </p>
         <br />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-          sapiente quos molestias ullam. Quam voluptates temporibus nobis illum
-          laborum, aliquam aspernatur? Praesentium vero, atque neque architecto
-          tempore aut doloremque repellat, quos quaerat quia accusamus facilis,
-          natus impedit! Vero officia nobis inventore, perspiciatis, numquam
-          tenetur, dolorem eaque iure delectus veritatis modi?
+          Freshly arrived at Lyon, I'm now learning Web development in Epitech.
+          I started to learn JavaScript and I'm now learning React.js. I took
+          that opportunity to create this website. I want it to be a place where
+          I could share all my school projects as a way to learn some more by
+          explaining them to others.
         </p>
       </div>
     </div>
