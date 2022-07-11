@@ -2,7 +2,6 @@ import React from "react";
 import { BsPersonFill, BsFillCalendarEventFill } from "react-icons/bs";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdWork, MdSchool } from "react-icons/md";
-import { FaCannabis } from "react-icons/fa";
 
 const PersonalInfo = () => {
   let dob = new Date("10/16/1998");
