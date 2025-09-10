@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title>Melchior Fallevoz | UI/UX & Web Design</title>
+		<link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+		<meta name="description" content="Portfolio de Melchior Fallevoz, UI/UX et Web Designer spécialisé dans les interfaces claires, ergonomiques et esthétiques.">
+		<meta name="keywords" content="UI/UX, web design, portfolio, design system, prototypes, interfaces">
+		<meta name="author" content="Melchior Fallevoz">
+		<link rel="stylesheet" href="./style.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+		<script src="./script.js" defer></script>
+	</head>
+	<body>
+		<nav class="side">
+			<a class="menu-dot active" href="#hero"></a>
+			<a class="menu-dot" href="#about"></a>
+			<a class="menu-dot" href="#services"></a>
+			<a class="menu-dot" href="#contact"></a>
+		</nav>
+
+		<div class="lang-toggle">
+			<button id="langBtn" class="lang-btn">EN</button>
+		</div>
+
+		<main id="scroll-container">
+			<section id="hero" class="hero">
+				<div class="panel text-center">
+					<h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold mb-6" data-parallax data-speed="-20" data-i18n="heroTitle"></h1>
+					<p class="text-lg md:text-xl text-slate-300 mb-8" data-parallax data-speed="-6" data-i18n="subtitle">UI/UX & Web Designer</p>
+					<a href="#services" class="px-6 py-3 rounded-full bg-[color:var(--accent)] text-black font-semibold shadow-lg" data-i18n="cta">Voir mes services</a>
+				</div>
+			</section>
+
+			<section id="about" class="bg-gray-800">
+				<div class="panel grid md:grid-cols-2 gap-10 items-center">
+					<div>
+						<h2 class="text-3xl font-bold mb-4" data-parallax data-speed="-10" data-i18n="aboutTitle">À propos</h2>
+						<p class="mb-4 text-slate-300" data-i18n="aboutText1">Je conçois des
+							<b>sites modernes et performants</b>
+							qui valorisent votre activité et transforment vos visiteurs en clients.</p>
+						<p class="mb-4 text-slate-300" data-i18n="aboutText2">Mon expertise combine
+							<b>UI/UX design</b>
+							et
+							<b>développement web</b>, ce qui me permet de créer des sites
+							<b>claires</b>,
+							<b>esthétiques</b>
+							et
+							<b>optimisées</b>.</p>
+						<p class="text-slate-300" data-i18n="aboutText3">En travaillant ensemble, vous bénéficiez :</p>
+						<ul class="mb-4 list-disc">
+							<li class="ml-8 text-slate-300" data-i18n="aboutText4">d’un
+								<b>site pensé pour vos utilisateurs</b>
+								(ergonomie & design sur-mesure),</li>
+							<li class="ml-8 text-slate-300" data-i18n="aboutText5">d’une
+								<b>visibilité renforcée</b>
+								grâce au SEO et aux optimisations techniques,</li>
+							<li class="ml-8 text-slate-300" data-i18n="aboutText6">d’un
+								<b>accompagnement complet</b>
+								: de la création jusqu’à la maintenance.</li>
+						</ul>
+						<p class="mb-4 text-slate-300" data-i18n="aboutText7">Mon objectif est simple : vous aider à développer une présence en ligne
+							<b>professionnelle</b>,
+							<b>crédible</b>
+							et
+							<b>impactante</b>.</p>
+					</div>
+					<div class="project-card p-6" data-parallax data-speed="10">
+						<div class="w-full rounded-lg bg-gradient-to-br from-[#11203a] to-[#0b1b2d] flex items-center justify-center">
+							<img src="./assets/mockup.png" alt="Mockup de design" class="w-full h-auto rounded-lg">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="services" class="bg-[#071023]">
+				<div class="panel">
+					<h2 class="text-4xl font-bold mb-8 text-center" data-parallax data-speed="-8" data-i18n="servicesTitle">Mes Services</h2>
+					<p class="text-slate-300 text-center mb-10 max-w-2xl mx-auto" data-i18n="servicesIntro">Je vous accompagne dans la conception et l’optimisation de votre présence en ligne avec des solutions sur-mesure.</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+
+						<article class="project-card p-6" data-parallax data-speed="6">
+							<h3 class="text-xl font-semibold mb-3" data-i18n="service1Title">Création & Refonte de sites</h3>
+							<p class="text-slate-300 text-sm" data-i18n="service1Text">Sites modernes, performants et adaptés à vos besoins.</p>
+						</article>
+
+						<article class="project-card p-6" data-parallax data-speed="6">
+							<h3 class="text-xl font-semibold mb-3" data-i18n="service2Title">UI / UX Design</h3>
+							<p class="text-slate-300 text-sm" data-i18n="service2Text">Interfaces intuitives et designs centrés sur l’utilisateur.</p>
+						</article>
+
+						<article class="project-card p-6" data-parallax data-speed="6">
+							<h3 class="text-xl font-semibold mb-3" data-i18n="service3Title">SEO & Optimisation</h3>
+							<p class="text-slate-300 text-sm" data-i18n="service3Text">Optimisation du référencement pour une meilleure visibilité.</p>
+						</article>
+
+						<article class="project-card p-6" data-parallax data-speed="6">
+							<h3 class="text-xl font-semibold mb-3" data-i18n="service4Title">Maintenance & Support</h3>
+							<p class="text-slate-300 text-sm" data-i18n="service4Text">Suivi, mises à jour et assistance technique régulière.</p>
+						</article>
+
+					</div>
+				</div>
+			</section>
+
+			<section id="contact" class="bg-gray-900">
+				<div class="panel max-w-lg w-full text-center">
+					<h2 class="text-3xl font-bold mb-4" data-parallax data-speed="-8" data-i18n="contactTitle">Me Contacter</h2>
+					<p class="text-slate-300 mb-6" data-i18n="contactText">Remplissez le formulaire et je vous recontacterai rapidement.</p>
+
+					<form id="contactForm" action="https://formspree.io/f/xyzdllej" method="POST" class="space-y-4 text-left">
+						<div>
+							<label for="name" class="block mb-1 text-sm" data-i18n="formName">Nom</label>
+							<input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-700">
+						</div>
+						<div>
+							<label for="email" class="block mb-1 text-sm" data-i18n="formEmail">Email</label>
+							<input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-700">
+						</div>
+						<div>
+							<label for="message" class="block mb-1 text-sm" data-i18n="formMessage">Message</label>
+							<textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-700"></textarea>
+						</div>
+						<button type="submit" class="w-full px-6 py-3 rounded-full bg-[color:var(--accent)] text-black font-semibold shadow-lg" data-i18n="formSubmit">Envoyer</button>
+					</form>
+
+					<p id="formMessage" class="mt-4 hidden"></p>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
