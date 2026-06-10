@@ -3,17 +3,55 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
-		<title>Melchior Fallevoz | UI/UX & Web Design</title>
+		<title>Melchior Fallevoz | Full-Stack Developer</title>
 		<link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-		<meta name="description" content="Portfolio of Melchior Fallevoz, UI/UX and Web Designer specializing in clear, ergonomic, and aesthetic interfaces.">
-		<meta name="keywords" content="UI/UX, web design, portfolio, design system, prototypes, interfaces">
+		<meta name="description" content="Portfolio of Melchior Fallevoz, full-stack developer (React, Vue, Node/PHP, Shopify) with 3+ years building web platforms, e-commerce, and automation.">
+		<meta name="keywords" content="full-stack developer, web developer, React, Vue, TypeScript, Shopify, Node, PHP, portfolio">
 		<meta name="author" content="Melchior Fallevoz">
+		<link rel="canonical" href="https://www.mfallevoz.me/">
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.mfallevoz.me/">
+		<meta property="og:title" content="Melchior Fallevoz | Full-Stack Developer">
+		<meta property="og:description" content="Full-stack developer (React, Vue, PHP, Shopify) with 3+ years building web platforms, e-commerce, and automation. Based in Ho Chi Minh City — open to remote roles and relocation.">
+		<meta property="og:image" content="https://www.mfallevoz.me/assets/og-image.jpg">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:locale:alternate" content="fr_FR">
+
+		<!-- Twitter / X Card -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Melchior Fallevoz | Full-Stack Developer">
+		<meta name="twitter:description" content="Full-stack developer (React, Vue, PHP, Shopify) with 3+ years building web platforms, e-commerce, and automation.">
+		<meta name="twitter:image" content="https://www.mfallevoz.me/assets/og-image.jpg">
 		<link rel="stylesheet" href="./style.css">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 		<script src="./script.js" defer></script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Melchior Fallevoz",
+			"jobTitle": "Full-Stack Developer",
+			"url": "https://www.mfallevoz.me/",
+			"image": "https://www.mfallevoz.me/assets/og-image.jpg",
+			"sameAs": [
+				"https://github.com/mfallevoz",
+				"https://www.linkedin.com/in/mfallevoz"
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Ho Chi Minh City",
+				"addressCountry": "VN"
+			},
+			"knowsAbout": ["React", "Vue.js", "TypeScript", "PHP", "Shopify", "E-commerce", "Automation"]
+		}
+		</script>
 	</head>
 	<body>
 
@@ -28,7 +66,7 @@
 			</a>
 			<a class="nav-item group" href="#services">
 				<div class="menu-dot"></div>
-				<span class="nav-text" data-i18n="navServices">Services</span>
+				<span class="nav-text" data-i18n="navServices">Skills</span>
 			</a>
 			<a class="nav-item group" href="#projects">
 				<div class="menu-dot"></div>
@@ -48,83 +86,99 @@
 
 			<section id="hero" class="hero">
 				<div class="panel text-center">
-					<h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold mb-6" data-parallax data-speed="-20" data-i18n="heroTitle"></h1>
-					<p class="text-lg md:text-xl text-slate-300 mb-8" data-parallax data-speed="-6" data-i18n="subtitle">UI/UX & Web Designer</p>
-					<a href="#services" class="px-6 py-3 rounded-full bg-[color:var(--accent)] text-black font-semibold shadow-lg" data-i18n="cta">See my services</a>
+					<h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold mb-6" data-parallax data-speed="-20">Hi! I'm <span class="text-[color:var(--accent)]">Melchior Fallevoz</span></h1>
+					<p class="text-lg md:text-xl text-slate-300 mb-8" data-parallax data-speed="-6" data-i18n="subtitle">Full-Stack Developer</p>
+					<a href="#projects" class="self-center inline-block px-6 py-3 rounded-full bg-[color:var(--accent)] text-black font-semibold shadow-lg" data-i18n="cta">View my work</a>
 				</div>
 			</section>
 
-			<section id="about" class="bg-gray-800">
+			<section id="about" class="bg-[#0d1b33]">
 				<div class="panel grid md:grid-cols-2 gap-10 items-center">
 					<div>
 						<h2 class="text-3xl font-bold mb-4" data-parallax data-speed="-10" data-i18n="aboutTitle">About</h2>
-						<p class="mb-4 text-slate-300" data-i18n="aboutText1">I design
-							<b>modern and high-performing websites</b>
-							that showcase your business and turn visitors into clients.</p>
-						<p class="mb-4 text-slate-300" data-i18n="aboutText2">My expertise combines
-							<b>UI/UX design</b>
-							and
-							<b>web development</b>, which allows me to create websites that are
-							<b>clear</b>,
-							<b>aesthetic</b>, and
-							<b>optimized</b>.</p>
-						<p class="text-slate-300" data-i18n="aboutText3">By working together, you benefit from:</p>
+						<div class="w-12 h-1 rounded-full bg-[color:var(--accent)] -mt-1 mb-5"></div>
+						<p class="mb-4 text-slate-300" data-i18n="aboutText1">I'm a <b>full-stack developer</b> with <b>3+ years</b> building and shipping web platforms, e-commerce stores, and automation workflows.</p>
+						<p class="mb-4 text-slate-300" data-i18n="aboutText2">I work across the <b>full stack</b> — from React/Vue frontends to backend APIs — with a strong <b>UI/UX sensibility</b> and a focus on clean, maintainable code.</p>
+						<p class="text-slate-300" data-i18n="aboutText3">What I bring to a team:</p>
 						<ul class="mb-4 list-disc">
-							<li class="ml-8 text-slate-300" data-i18n="aboutText4">a
-								<b>website designed for your users</b>
-								(ergonomics & tailored design),</li>
-							<li class="ml-8 text-slate-300" data-i18n="aboutText5">
-								<b>enhanced visibility</b>
-								thanks to SEO and technical optimizations,</li>
-							<li class="ml-8 text-slate-300" data-i18n="aboutText6">a
-								<b>complete support</b>: from creation to ongoing maintenance.</li>
+							<li class="ml-8 text-slate-300" data-i18n="aboutText4"><b>End-to-end ownership</b> — I ship features from interface to backend.</li>
+							<li class="ml-8 text-slate-300" data-i18n="aboutText5"><b>Fast adaptation</b> to new stacks, codebases, and client contexts.</li>
+							<li class="ml-8 text-slate-300" data-i18n="aboutText6"><b>Remote, international experience</b> in French, English, and Vietnamese.</li>
 						</ul>
-						<p class="mb-4 text-slate-300" data-i18n="aboutText7">My goal is simple: to help you build an online presence that is
-							<b>professional</b>,
-							<b>credible</b>, and
-							<b>impactful</b>.</p>
+						<p class="mb-4 text-slate-300" data-i18n="aboutText7">Currently based in Ho Chi Minh City, <b>open to remote roles and relocation</b>.</p>
 					</div>
-					<div class="project-card p-6" data-parallax data-speed="10">
+					<div class="project-card p-6 group hover:border-[var(--accent)] transition-colors duration-300" data-parallax data-speed="10">
 						<div class="w-full rounded-lg bg-gradient-to-br from-[#11203a] to-[#0b1b2d] flex items-center justify-center">
-							<img src="./assets/mockup.png" alt="Design Mockup" class="w-full h-auto rounded-lg">
+							<img src="./assets/mockup.jpg" alt="Aperçu du site Cointribune — refonte frontend React" class="w-full h-auto rounded-lg">
 						</div>
+						<p class="text-slate-400 text-xs mt-3 text-center" data-i18n="aboutMockupCaption">Cointribune — React frontend redesign</p>
 					</div>
 				</div>
 			</section>
 
 			<section id="services" class="bg-[#071023]">
 				<div class="panel">
-					<h2 class="text-4xl font-bold mb-8 text-center" data-parallax data-speed="-8" data-i18n="servicesTitle">My Services</h2>
-					<p class="text-slate-300 text-center mb-10 max-w-2xl mx-auto" data-i18n="servicesIntro">I help you design and optimize your online presence with tailor-made solutions.</p>
+					<h2 class="text-4xl font-bold mb-8 text-center" data-parallax data-speed="-8" data-i18n="servicesTitle">What I Do</h2>
+					<div class="w-12 h-1 rounded-full bg-[color:var(--accent)] mx-auto -mt-5 mb-8"></div>
+					<p class="text-slate-300 text-center mb-10 max-w-2xl mx-auto" data-i18n="servicesIntro">The areas I work across as a full-stack developer.</p>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-						<article class="project-card p-6" data-parallax data-speed="6">
-							<h3 class="text-xl font-semibold mb-3" data-i18n="service1Title">Website Creation & Redesign</h3>
-							<p class="text-slate-300 text-sm" data-i18n="service1Text">Modern, high-performance websites tailored to your needs.</p>
+						<article class="project-card p-6 group hover:border-[var(--accent)] transition-colors duration-300" data-parallax data-speed="6">
+							<span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[color:var(--accent)] text-[color:var(--accent)] mb-4"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+							<h3 class="text-xl font-semibold mb-2" data-i18n="service1Title">Frontend Development</h3>
+							<p class="text-slate-300 text-sm mb-4" data-i18n="service1Text">Responsive, accessible, polished interfaces.</p>
+							<div class="flex flex-wrap gap-1.5">
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">React</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Vue.js</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">TypeScript</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">HTML/CSS</span>
+							</div>
 						</article>
 
-						<article class="project-card p-6" data-parallax data-speed="6">
-							<h3 class="text-xl font-semibold mb-3" data-i18n="service2Title">UI / UX Design</h3>
-							<p class="text-slate-300 text-sm" data-i18n="service2Text">Intuitive interfaces and user-centered designs.</p>
+						<article class="project-card p-6 group hover:border-[var(--accent)] transition-colors duration-300" data-parallax data-speed="6">
+							<span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[color:var(--accent)] text-[color:var(--accent)] mb-4"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>
+							<h3 class="text-xl font-semibold mb-2" data-i18n="service2Title">Backend & APIs</h3>
+							<p class="text-slate-300 text-sm mb-4" data-i18n="service2Text">Robust APIs and server-side logic.</p>
+							<div class="flex flex-wrap gap-1.5">
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">PHP</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Python</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Ruby on Rails</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Go</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">SQL</span>
+							</div>
 						</article>
 
-						<article class="project-card p-6" data-parallax data-speed="6">
-							<h3 class="text-xl font-semibold mb-3" data-i18n="service3Title">SEO & Optimization</h3>
-							<p class="text-slate-300 text-sm" data-i18n="service3Text">SEO optimization for better visibility.</p>
+						<article class="project-card p-6 group hover:border-[var(--accent)] transition-colors duration-300" data-parallax data-speed="6">
+							<span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[color:var(--accent)] text-[color:var(--accent)] mb-4"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>
+							<h3 class="text-xl font-semibold mb-2" data-i18n="service3Title">E-commerce</h3>
+							<p class="text-slate-300 text-sm mb-4" data-i18n="service3Text">Online stores built end-to-end.</p>
+							<div class="flex flex-wrap gap-1.5">
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Shopify</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Liquid</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Headless</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Stripe · Amazon Pay</span>
+							</div>
 						</article>
 
-						<article class="project-card p-6" data-parallax data-speed="6">
-							<h3 class="text-xl font-semibold mb-3" data-i18n="service4Title">Maintenance & Support</h3>
-							<p class="text-slate-300 text-sm" data-i18n="service4Text">Follow-up, updates and regular technical support.</p>
+						<article class="project-card p-6 group hover:border-[var(--accent)] transition-colors duration-300" data-parallax data-speed="6">
+							<span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[color:var(--accent)] text-[color:var(--accent)] mb-4"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+							<h3 class="text-xl font-semibold mb-2" data-i18n="service4Title">Automation & Integrations</h3>
+							<p class="text-slate-300 text-sm mb-4" data-i18n="service4Text">Workflows that remove manual work.</p>
+							<div class="flex flex-wrap gap-1.5">
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Make</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">Airtable</span>
+								<span class="text-xs px-2.5 py-1 rounded-full border border-slate-700 text-slate-300">APIs & Webhooks</span>
+							</div>
 						</article>
 
 					</div>
 				</div>
 			</section>
 
-			<section id="projects" class="bg-gray-900">
+			<section id="projects" class="bg-[#0d1b33]">
 				<div class="panel relative">
 					<h2 class="text-4xl font-bold mb-8 text-center" data-parallax data-speed="-8" data-i18n="projectsTitle">My Projects</h2>
+					<div class="w-12 h-1 rounded-full bg-[color:var(--accent)] mx-auto -mt-5 mb-8"></div>
 
 					<div class="absolute left-0 top-[55%] -translate-y-1/2 w-24 h-48 z-30 hidden md:flex items-center justify-start group/proximity-left">
 						<button id="prevProjectBtn" class="bg-[color:var(--accent)] text-black font-bold p-4 rounded-full shadow-2xl opacity-0 group-hover/proximity-left:opacity-100 transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95 ml-2" aria-label="Previous project">
@@ -144,78 +198,104 @@
 
 					<div id="projects-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4 md:px-0">
 
-						<a href="https://www.lecomptoir.co.jp" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[500px] flex flex-col justify-between relative">
+						<a href="https://www.lecomptoir.co.jp" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/lecomptoir.svg" alt="Logo Le Comptoir" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img src="./assets/logos/lecomptoir.svg" alt="Le Comptoir logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
-							<div class="flex-1 relative bg-gray-900/40 overflow-hidden">
-								<div class="absolute w-max max-w-[calc(100%-48px)] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-left group-hover:left-6 group-hover:top-6 group-hover:translate-x-0 group-hover:translate-y-0 group-focus:left-6 group-focus:top-6 group-focus:translate-x-0 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
+							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
+								<div class="pc-head absolute w-max max-w-[calc(100%-48px)] left-8 top-[45%] -translate-y-1/2 text-left group-hover:top-8 group-hover:translate-y-0 group-focus:top-8 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
 									<h3 class="text-xl font-bold text-white mb-0.5">Le Comptoir</h3>
 									<p class="text-[color:var(--accent)] text-sm font-medium" data-i18n="project1Role">Automation & Integrations Engineer</p>
 								</div>
 
-								<div class="absolute top-24 left-6 right-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
-									<p class="text-slate-300 text-sm leading-relaxed" data-i18n="project1Desc">
+								<div class="pc-desc absolute top-24 left-8 right-8 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
+									<p class="text-slate-300 text-sm leading-normal" data-i18n="project1Desc">
 										Maintenance and evolution of a modern e-commerce architecture (Headless Shopify with a Vue.js frontend). Design and automation of backend data workflows using Make and Airtable. Handled operational management and security for Stripe and Amazon Pay payment gateways.
 									</p>
 								</div>
+
+								<div class="pc-tags absolute bottom-[27%] left-8 right-8 flex flex-wrap gap-1.5 transition-all duration-700 ease-in-out group-hover:bottom-6 group-focus:bottom-6">
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Shopify (Headless)</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Vue.js</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Make · Airtable</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Stripe · Amazon Pay</span>
+									</div>
 							</div>
 						</a>
 
-						<a href="https://www.minnatopia.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[500px] flex flex-col justify-between relative">
+						<a href="https://www.minnatopia.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/minnatopia.svg" alt="Logo Le Comptoir" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img src="./assets/logos/minnatopia.svg" alt="Minnatopia logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
-							<div class="flex-1 relative bg-gray-900/40 overflow-hidden">
-								<div class="absolute w-max max-w-[calc(100%-48px)] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-left group-hover:left-6 group-hover:top-6 group-hover:translate-x-0 group-hover:translate-y-0 group-focus:left-6 group-focus:top-6 group-focus:translate-x-0 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
+							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
+								<div class="pc-head absolute w-max max-w-[calc(100%-48px)] left-8 top-[45%] -translate-y-1/2 text-left group-hover:top-8 group-hover:translate-y-0 group-focus:top-8 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
 									<h3 class="text-xl font-bold text-white mb-0.5">Minnatopia</h3>
 									<p class="text-[color:var(--accent)] text-sm font-medium" data-i18n="project2Role">Full-Stack — Shopify Developer</p>
 								</div>
 
-								<div class="absolute top-24 left-6 right-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
-									<p class="text-slate-300 text-sm leading-relaxed" data-i18n="project2Desc">
+								<div class="pc-desc absolute top-24 left-8 right-8 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
+									<p class="text-slate-300 text-sm leading-normal" data-i18n="project2Desc">
 										Maintenance and development of custom features for a Shopify storefront. Created and integrated custom blocks (Liquid, CSS, JS) tailored to catalog needs. Managed site operations aligned with official TCG card releases.
 									</p>
 								</div>
+
+								<div class="pc-tags absolute bottom-[27%] left-8 right-8 flex flex-wrap gap-1.5 transition-all duration-700 ease-in-out group-hover:bottom-6 group-focus:bottom-6">
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Shopify</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Liquid</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Vue.js</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">Mailchimp</span>
+									</div>
 							</div>
 						</a>
 
-						<a href="https://www.cointribune.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[500px] flex flex-col justify-between relative">
+						<a href="https://www.cointribune.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/cointribune.svg" alt="Logo Le Comptoir" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img src="./assets/logos/cointribune.svg" alt="Cointribune logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
-							<div class="flex-1 relative bg-gray-900/40 overflow-hidden">
-								<div class="absolute w-max max-w-[calc(100%-48px)] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-left group-hover:left-6 group-hover:top-6 group-hover:translate-x-0 group-hover:translate-y-0 group-focus:left-6 group-focus:top-6 group-focus:translate-x-0 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
-									<h3 class="text-xl font-bold text-white mb-0.5" data-i18n="project1Title">Cointribune</h3>
+							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
+								<div class="pc-head absolute w-max max-w-[calc(100%-48px)] left-8 top-[45%] -translate-y-1/2 text-left group-hover:top-8 group-hover:translate-y-0 group-focus:top-8 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
+									<h3 class="text-xl font-bold text-white mb-0.5">Cointribune</h3>
 									<p class="text-[color:var(--accent)] text-sm font-medium">Full-Stack Developer</p>
 								</div>
 
-								<div class="absolute top-24 left-6 right-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
-									<p class="text-slate-300 text-sm leading-relaxed" data-i18n="project3Desc">
+								<div class="pc-desc absolute top-24 left-8 right-8 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
+									<p class="text-slate-300 text-sm leading-normal" data-i18n="project3Desc">
 										Development and feature maintenance for a major media website. Worked in a Headless environment (decoupled WordPress CMS with a React frontend). Optimized overall technical performance and user experience.
 									</p>
 								</div>
+
+								<div class="pc-tags absolute bottom-[27%] left-8 right-8 flex flex-wrap gap-1.5 transition-all duration-700 ease-in-out group-hover:bottom-6 group-focus:bottom-6">
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">WordPress (Headless)</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">React</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">PHP</span>
+									</div>
 							</div>
 						</a>
 
-						<a href="https://www.thewalkingnerds.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[500px] flex flex-col justify-between relative">
+						<a href="https://www.thewalkingnerds.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/twn.svg" alt="Logo Le Comptoir" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img src="./assets/logos/twn.svg" alt="The Walking Nerds logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
-							<div class="flex-1 relative bg-gray-900/40 overflow-hidden">
-								<div class="absolute w-max max-w-[calc(100%-48px)] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-left group-hover:left-6 group-hover:top-6 group-hover:translate-x-0 group-hover:translate-y-0 group-focus:left-6 group-focus:top-6 group-focus:translate-x-0 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
-									<h3 class="text-xl font-bold text-white mb-0.5" data-i18n="project1Title">The Walking Nerds</h3>
+							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
+								<div class="pc-head absolute w-max max-w-[calc(100%-48px)] left-8 top-[45%] -translate-y-1/2 text-left group-hover:top-8 group-hover:translate-y-0 group-focus:top-8 group-focus:translate-y-0 transition-all duration-700 ease-in-out delay-200 group-hover:delay-0 group-focus:delay-0">
+									<h3 class="text-xl font-bold text-white mb-0.5">The Walking Nerds</h3>
 									<p class="text-[color:var(--accent)] text-sm font-medium">Full-Stack Developer</p>
 								</div>
 
-								<div class="absolute top-24 left-6 right-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
-									<p class="text-slate-300 text-sm leading-relaxed" data-i18n="project4Desc">Joined the IT services agency team to handle maintenance and visual enhancements for a multi-client web fleet. Independently resolved technical tickets, optimized responsiveness, and implemented front-end fixes across various WordPress sites.
+								<div class="pc-desc absolute top-24 left-8 right-8 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:translate-y-0 group-focus:pointer-events-auto transition-all duration-500 ease-in-out delay-0 group-hover:delay-300 group-focus:delay-300 border-t border-slate-800/60 pt-3">
+									<p class="text-slate-300 text-sm leading-normal" data-i18n="project4Desc">Joined the IT services agency team to handle maintenance and visual enhancements for a multi-client web fleet. Independently resolved technical tickets, optimized responsiveness, and implemented front-end fixes across various WordPress sites.
 									</p>
 								</div>
+
+								<div class="pc-tags absolute bottom-[27%] left-8 right-8 flex flex-wrap gap-1.5 transition-all duration-700 ease-in-out group-hover:bottom-6 group-focus:bottom-6">
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">WordPress</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">PHP</span>
+										<span class="text-[11px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">CSS / JS</span>
+									</div>
 							</div>
 						</a>
 
@@ -226,27 +306,33 @@
 			<section id="contact" class="bg-[#071023]">
 				<div class="panel max-w-lg w-full text-center">
 					<h2 class="text-3xl font-bold mb-4" data-parallax data-speed="-8" data-i18n="contactTitle">Contact Me</h2>
+					<div class="w-12 h-1 rounded-full bg-[color:var(--accent)] mx-auto -mt-1 mb-5"></div>
 					<p class="text-slate-300 mb-6" data-i18n="contactText">Fill out the form and I’ll get back to you quickly.</p>
 
 					<form id="contactForm" action="https://formspree.io/f/xyzdllej" method="POST" class="space-y-4 text-left">
 						<div>
 							<label for="name" class="block mb-1 text-sm" data-i18n="formName">Name</label>
-							<input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-700">
+							<input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-[#0d1b33] text-white border border-slate-700">
 						</div>
 						<div>
 							<label for="email" class="block mb-1 text-sm" data-i18n="formEmail">Email</label>
-							<input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-700">
+							<input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 rounded bg-[#0d1b33] text-white border border-slate-700">
 						</div>
 						<div>
 							<label for="message" class="block mb-1 text-sm" data-i18n="formMessage">Message</label>
-							<textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-700"></textarea>
+							<textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 rounded bg-[#0d1b33] text-white border border-slate-700"></textarea>
 						</div>
 						<button type="submit" class="w-full px-6 py-3 rounded-full bg-[color:var(--accent)] text-black font-semibold shadow-lg" data-i18n="formSubmit">Send</button>
 					</form>
 
 					<p id="formMessage" class="mt-4 hidden"></p>
+
+					<div class="mt-6 flex items-center justify-center gap-5 text-slate-300 text-sm">
+						<a href="https://github.com/mfallevoz" target="_blank" rel="noopener noreferrer" class="hover:text-[color:var(--accent)] transition-colors">GitHub</a>
+						<a href="https://linkedin.com/in/mfallevoz" target="_blank" rel="noopener noreferrer" class="hover:text-[color:var(--accent)] transition-colors">LinkedIn</a>
+					</div>
 				</div>
 			</section>
-		</body>
+		</main>
 	</body>
-</html></main></body></html>
+</html>

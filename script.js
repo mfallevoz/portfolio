@@ -55,90 +55,92 @@ const translations = {
     fr: {
         navHero: "Accueil",
         navAbout: "À propos",
-        navServices: "Services",
+        navServices: "Compétences",
         navProjects: "Projets",
         navContact: "Contact",
         heroText: "Salut ! Je suis ",
         heroName: "Melchior Fallevoz",
-        subtitle: "UI/UX & Web Designer",
-        cta: "Voir mes services",
+        subtitle: "Développeur Full-Stack",
+        cta: "Voir mes projets",
         aboutTitle: "À propos",
-        aboutText1: "Je conçois des <b>sites modernes et performants</b> qui valorisent votre activité et transforment vos visiteurs en clients.",
-        aboutText2: "Mon expertise combine <b>UI/UX design</b> et <b>développement web</b>, ce qui me permet de créer des sites <b>clairs</b>, <b>esthétiques</b> et <b>optimisés</b>.",
-        aboutText3: "En travaillant ensemble, vous bénéficiez :",
-        aboutText4: "d’un <b>site pensé pour vos utilisateurs</b> (ergonomie & design sur-mesure),",
-        aboutText5: "d’une <b>visibilité renforcée</b> grâce au SEO et aux optimisations techniques,",
-        aboutText6: "d’un <b>accompagnement complet</b> : de la création jusqu’à la maintenance.",
-        aboutText7: "Mon objectif est simple : vous aider à développer une présence en ligne <b>professionnelle</b>, <b>crédible</b> et <b>impactante</b>.",
-        servicesTitle: "Mes Services",
-        servicesIntro: "Je vous accompagne dans la conception et l’optimisation de votre présence en ligne avec des solutions sur-mesure.",
-        service1Title: "Création & Refonte de sites",
-        service1Text: "Sites modernes, performants et adaptés à vos besoins.",
-        service2Title: "UI / UX Design",
-        service2Text: "Interfaces intuitives et designs centrés sur l’utilisateur.",
-        service3Title: "SEO & Optimisation",
-        service3Text: "Optimisation du référencement pour une meilleure visibilité.",
-        service4Title: "Maintenance & Support",
-        service4Text: "Suivi, mises à jour et assistance technique régulière.",
+        aboutText1: "Je suis <b>développeur full-stack</b> avec <b>3+ ans</b> d'expérience à concevoir et livrer des plateformes web, des boutiques e-commerce et des workflows d'automatisation.",
+        aboutText2: "Je travaille sur toute la <b>stack</b> — des frontends React/Vue aux APIs backend — avec une vraie <b>sensibilité UI/UX</b> et le souci d'un code propre et maintenable.",
+        aboutText3: "Ce que j'apporte à une équipe :",
+        aboutText4: "<b>Autonomie de bout en bout</b> — je livre les fonctionnalités de l'interface au backend.",
+        aboutText5: "<b>Adaptation rapide</b> aux nouvelles stacks, bases de code et contextes clients.",
+        aboutText6: "<b>Expérience remote et internationale</b>, en français, anglais et vietnamien.",
+        aboutText7: "Actuellement basé à Hô Chi Minh-Ville, <b>ouvert au remote et à la relocalisation</b>.",
+        aboutMockupCaption: "Cointribune — refonte frontend React",
+        servicesTitle: "Ce que je fais",
+        servicesIntro: "Les domaines que je couvre en tant que développeur full-stack.",
+        service1Title: "Développement Frontend",
+        service1Text: "Des interfaces responsive, accessibles et soignées.",
+        service2Title: "Backend & APIs",
+        service2Text: "Des APIs robustes et de la logique serveur.",
+        service3Title: "E-commerce",
+        service3Text: "Des boutiques en ligne construites de bout en bout.",
+        service4Title: "Automatisation & Intégrations",
+        service4Text: "Des workflows qui suppriment le travail manuel.",
         projectsTitle: "Mes Projets",
         project1Desc: "Maintenance et évolution d'une architecture e-commerce moderne (Shopify Headless avec surcouche Vue.js). Conception et automatisation des flux de données backend via Make et Airtable. Gestion opérationnelle et sécurisation des passerelles de paiement Stripe et Amazon Pay.",
         project2Desc: "Maintenance évolutive de la boutique Shopify et développement de fonctionnalités sur-mesure. Création et intégration de blocs customs (Liquid, CSS, JS) pour adapter l'interface aux besoins du catalogue. Gestion opérationnelle du site au rythme des sorties officielles de cartes TCG.",
         project3Desc: "Développement et maintenance évolutive des fonctionnalités d'un site média d'envergure. Travail en environnement Headless (CMS WordPress découplé avec un front-end en React). Optimisation des performances globales et de l'expérience utilisateur.",
         project4Desc: "Intégration au sein de l'équipe de l'ESN pour la maintenance et l'évolution graphique d'un parc de sites multiclient. Résolution de tickets techniques en autonomie, optimisation responsive et corrections front-end sur différents CMS WordPress.",
         contactTitle: "Me Contacter",
-        contactText: "Remplissez le formulaire et je vous recontacterai rapidement.",
+        contactText: "Un poste ou un projet en tête ? Écrivez-moi, je réponds rapidement.",
         formName: "Nom",
         formEmail: "Email",
         formMessage: "Message",
         formSubmit: "Envoyer",
         formSuccess: "✅ Merci ! Ton message a bien été envoyé.",
         formError: "❌ Oups, une erreur est survenue. Essaie à nouveau.",
-        metaDesc: "Portfolio de Melchior Fallevoz, UI/UX et Web Designer spécialisé dans les interfaces claires, ergonomiques et esthétiques.",
-        metaKeywords: "UI/UX, web design, portfolio, design system, prototypes, interfaces"
+        metaDesc: "Portfolio de Melchior Fallevoz, développeur full-stack (React, Vue, Node/PHP, Shopify) avec 3+ ans d'expérience en plateformes web, e-commerce et automatisation.",
+        metaKeywords: "développeur full-stack, développeur web, React, Vue, TypeScript, Shopify, Node, PHP, portfolio"
     },
     en: {
         navHero: "Home",
         navAbout: "About",
-        navServices: "Services",
+        navServices: "Skills",
         navProjects: "Projects",
         navContact: "Contact",
         heroText: "Hi! I'm ",
         heroName: "Melchior Fallevoz",
-        subtitle: "UI/UX & Web Designer",
-        cta: "See my services",
+        subtitle: "Full-Stack Developer",
+        cta: "View my work",
         aboutTitle: "About",
-        aboutText1: "I design <b>modern and high-performing websites</b> that showcase your business and turn visitors into clients.",
-        aboutText2: "My expertise combines <b>UI/UX design</b> and <b>web development</b>, which allows me to create websites that are <b>clear</b>, <b>aesthetic</b>, and <b>optimized</b>.",
-        aboutText3: "By working together, you benefit from:",
-        aboutText4: "a <b>website designed for your users</b> (ergonomics & tailored design),",
-        aboutText5: "<b>enhanced visibility</b> thanks to SEO and technical optimizations,",
-        aboutText6: "a <b>complete support</b>: from creation to ongoing maintenance.",
-        aboutText7: "My goal is simple: to help you build an online presence that is <b>professional</b>, <b>credible</b>, and <b>impactful</b>.",
-        servicesTitle: "My Services",
-        servicesIntro: "I help you design and optimize your online presence with tailor-made solutions.",
-        service1Title: "Website Creation & Redesign",
-        service1Text: "Modern, high-performance websites tailored to your needs.",
-        service2Title: "UI / UX Design",
-        service2Text: "Intuitive interfaces and user-centered designs.",
-        service3Title: "SEO & Optimization",
-        service3Text: "SEO optimization for better visibility.",
-        service4Title: "Maintenance & Support",
-        service4Text: "Follow-up, updates and regular technical support.",
+        aboutText1: "I'm a <b>full-stack developer</b> with <b>3+ years</b> building and shipping web platforms, e-commerce stores, and automation workflows.",
+        aboutText2: "I work across the <b>full stack</b> — from React/Vue frontends to backend APIs — with a strong <b>UI/UX sensibility</b> and a focus on clean, maintainable code.",
+        aboutText3: "What I bring to a team:",
+        aboutText4: "<b>End-to-end ownership</b> — I ship features from interface to backend.",
+        aboutText5: "<b>Fast adaptation</b> to new stacks, codebases, and client contexts.",
+        aboutText6: "<b>Remote, international experience</b> in French, English, and Vietnamese.",
+        aboutText7: "Currently based in Ho Chi Minh City, <b>open to remote roles and relocation</b>.",
+        aboutMockupCaption: "Cointribune — React frontend redesign",
+        servicesTitle: "What I Do",
+        servicesIntro: "The areas I work across as a full-stack developer.",
+        service1Title: "Frontend Development",
+        service1Text: "Responsive, accessible, polished interfaces.",
+        service2Title: "Backend & APIs",
+        service2Text: "Robust APIs and server-side logic.",
+        service3Title: "E-commerce",
+        service3Text: "Online stores built end-to-end.",
+        service4Title: "Automation & Integrations",
+        service4Text: "Workflows that remove manual work.",
         projectsTitle: "My Projects",
         project1Desc: "Maintenance and evolution of a modern e-commerce architecture (Headless Shopify with a Vue.js frontend). Design and automation of backend data workflows using Make and Airtable. Handled operational management and security for Stripe and Amazon Pay payment gateways.",
         project2Desc: "Maintenance and development of custom features for a Shopify storefront. Created and integrated custom blocks (Liquid, CSS, JS) tailored to catalog needs. Managed site operations aligned with official TCG card releases.",
         project3Desc: "Development and feature maintenance for a major media website. Worked in a Headless environment (decoupled WordPress CMS with a React frontend). Optimized overall technical performance and user experience.",
         project4Desc: "Joined the IT services agency team to handle maintenance and visual enhancements for a multi-client web fleet. Independently resolved technical tickets, optimized responsiveness, and implemented front-end fixes across various WordPress sites.",
         contactTitle: "Contact Me",
-        contactText: "Fill out the form and I’ll get back to you quickly.",
+        contactText: "Have a role or project in mind? Send me a message and I'll get back to you quickly.",
         formName: "Name",
         formEmail: "Email",
         formMessage: "Message",
         formSubmit: "Send",
         formSuccess: "✅ Thanks! Your message has been sent successfully.",
         formError: "❌ Oops, something went wrong. Please try again.",
-        metaDesc: "Portfolio of Melchior Fallevoz, UI/UX and Web Designer specializing in clear, ergonomic, and aesthetic interfaces.",
-        metaKeywords: "UI/UX, web design, portfolio, design system, prototypes, interfaces"
+        metaDesc: "Portfolio of Melchior Fallevoz, full-stack developer (React, Vue, Node/PHP, Shopify) with 3+ years building web platforms, e-commerce, and automation.",
+        metaKeywords: "full-stack developer, web developer, React, Vue, TypeScript, Shopify, Node, PHP, portfolio"
     }
 };
 
@@ -159,11 +161,11 @@ function typeWriter(text, name) {
             i++;
             typingTimeout = setTimeout(step, 80);
         } else if (i < text.length + name.length) {
-            target.innerHTML = text + '<span class="text-indigo-400">' + name.substring(0, i - text.length + 1) + '</span>';
+            target.innerHTML = text + '<span class="text-[color:var(--accent)]">' + name.substring(0, i - text.length + 1) + '</span>';
             i++;
             typingTimeout = setTimeout(step, 80);
         } else {
-            target.innerHTML = text + '<span class="text-indigo-400">' + name + '</span>' + '<span class="cursor-blink">|</span>';
+            target.innerHTML = text + '<span class="text-[color:var(--accent)]">' + name + '</span>' + '<span class="cursor-blink">|</span>';
         }
     }
     step();
@@ -191,10 +193,25 @@ function updateTexts() {
     });
 }
 
+let langSwitching = false;
+
 function switchLang() {
+    if (langSwitching) return; // évite les double-clics pendant le fondu
+    langSwitching = true;
+
     currentLang = currentLang === 'fr' ? 'en' : 'fr';
-    updateTexts();
-    typeWriter(translations[currentLang].heroText, translations[currentLang].heroName);
+
+    container.classList.add('lang-fade');
+
+    setTimeout(() => {
+        updateTexts();
+        typeWriter(translations[currentLang].heroText, translations[currentLang].heroName);
+
+        requestAnimationFrame(() => {
+            container.classList.remove('lang-fade');
+            setTimeout(() => { langSwitching = false; }, 250);
+        });
+    }, 220);
 }
 
 updateTexts();
@@ -269,6 +286,50 @@ if (projectsSlider && nextProjectBtn && prevProjectBtn) {
     window.addEventListener('resize', updateArrows);
 
     setTimeout(updateArrows, 150);
+}
+
+
+// ---- Mobile : la carte la plus proche du centre du slider est en "focus" ----
+const mobileFocusQuery = window.matchMedia('(max-width: 768px)');
+
+if (projectsSlider) {
+    const projectCards = Array.from(projectsSlider.querySelectorAll('.project-card'));
+    let focusTick = false;
+
+    function updateFocusedCard() {
+        focusTick = false;
+
+        if (!mobileFocusQuery.matches) {
+            projectCards.forEach(card => card.classList.remove('is-focused'));
+            return;
+        }
+
+        const sliderRect = projectsSlider.getBoundingClientRect();
+        const sliderCenter = sliderRect.left + sliderRect.width / 2;
+
+        let best = null;
+        let bestDist = Infinity;
+        projectCards.forEach(card => {
+            const r = card.getBoundingClientRect();
+            const dist = Math.abs(r.left + r.width / 2 - sliderCenter);
+            if (dist < bestDist) { bestDist = dist; best = card; }
+        });
+
+        projectCards.forEach(card => card.classList.toggle('is-focused', card === best));
+    }
+
+    function requestFocusUpdate() {
+        if (!focusTick) {
+            focusTick = true;
+            requestAnimationFrame(updateFocusedCard);
+        }
+    }
+
+    projectsSlider.addEventListener('scroll', requestFocusUpdate, { passive: true });
+    window.addEventListener('resize', requestFocusUpdate);
+    mobileFocusQuery.addEventListener('change', requestFocusUpdate);
+    window.addEventListener('load', requestFocusUpdate);
+    requestFocusUpdate();
 }
 
 
