@@ -4,94 +4,218 @@
 
 html,
 body {
-	height: 100%
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-	font-family: Inter, ui-sans-serif, system-ui;
-	background: #0b1220;
-	color: #e6eef8;
-	overflow-x: hidden;
-	-webkit-font-smoothing: antialiased;
-	scroll-behavior: smooth
+    font-family: Inter, ui-sans-serif, system-ui;
+    background: #0b1220;
+    color: #e6eef8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
+
 main {
-	scroll-snap-type: y mandatory;
-	height: 100vh;
-	overflow-y: auto;
-	overflow-x: hidden
+    scroll-snap-type: y mandatory;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
 section {
-	scroll-snap-align: start;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 4rem 1.90rem
+    scroll-snap-align: start;
+    height: 100dvh;
+    max-height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem 4rem 5.5rem;
+    overflow: hidden;
 }
+
+/* ---- Navigation latérale (Bulles extensibles) ---- */
 nav.side {
-	position: fixed;
-	left: 1rem;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 60;
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
 }
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px;
+    border-radius: 9999px;
+    max-width: 32px;
+    height: 32px;
+    overflow: hidden;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
 .menu-dot {
-	width: 12px;
-	height: 12px;
-	border-radius: 9999px;
-	background: rgba(255, 255, 255, 0.12);
-	box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6);
-	transition: transform 0.28s ease, background 0.28s ease
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(2, 6, 23, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
-.menu-dot.active {
-	background: var(--accent);
-	transform: scale(1.4)
+
+.nav-item .menu-dot.active {
+    background: var(--accent) !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px var(--accent);
 }
+
+.nav-text {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.25s ease 0.08s, transform 0.25s ease 0.08s;
+    color: #e6eef8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+@media (hover: hover) {
+    .nav-item:hover {
+        max-width: 180px;
+        background: rgba(11, 18, 32, 0.85);
+        border-color: var(--accent);
+        padding-right: 16px;
+    }
+    .nav-item:hover .menu-dot {
+        background: var(--accent);
+    }
+    .nav-item:hover .nav-text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Composants du Site ---- */
 .hero {
-	background: linear-gradient(180deg,#071023 0%, #081426 60%)
+    background: linear-gradient(180deg,#071023 0%, #081426 60%);
 }
+
 .panel {
-	max-width: 1200px;
-	width: 100%;
-	margin: 0 auto
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .project-card {
-	background: linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));
-	border: 1px solid rgba(255, 255, 255, 0.04);
-	border-radius: 14px;
-	backdrop-filter:blur(6px)
+    background: linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
 }
+
+/* ---- Logique du Slider Projets ---- */
+#projects-slider {
+    scrollbar-width: none;
+}
+#projects-slider::-webkit-scrollbar {
+    display: none;
+}
+
+#projects-slider .project-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: calc((100% - 2rem) / 2.35); 
+}
+
 [data-parallax] {
-	will-change: transform
+    will-change: transform;
 }
+
 .cursor-blink {
-	animation: blink 1s steps(2, start) infinite
+    animation: blink 1s steps(2, start) infinite;
 }
+
 @keyframes blink {
-	to {
-		visibility: hidden
-	}
+    to { visibility: hidden; }
 }
+
 .lang-toggle {
-	position: fixed;
-	top: 1rem;
-	right: 1rem;
-	z-index: 70;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 70;
 }
+
 .lang-btn {
-	background: var(--accent);
-	color: #000;
-	font-weight: 600;
-	padding: 0.5rem 1rem;
-	border-radius: 9999px;
-	cursor: pointer;
-	box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6)
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6);
+    transition: transform 0.2s ease;
 }
-@media(max-width:640px) {
-	nav.side {
-		left: 0.5rem
-	}
+
+.lang-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ---- Responsive ---- */
+@media(max-width:768px) {
+    nav.side {
+        left: 0.75rem;
+    }
+    
+    section {
+        padding: 3.5rem 1rem 2rem 3.5rem;
+    }
+
+    #about .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    #about img {
+        max-height: 160px;
+        object-fit: cover;
+    }
+    #about p, #about li {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+
+    #projects-slider .project-card {
+        scroll-snap-align: center;
+        width: 80vw; 
+    }
+
+    #services .grid {
+        gap: 0.75rem;
+    }
+    #services .project-card {
+        padding: 1rem;
+    }
+}
+
+@media(max-width:480px) {
+    #about .project-card {
+        display: none;
+    }
 }
