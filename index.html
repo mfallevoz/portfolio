@@ -30,9 +30,10 @@
 		<meta name="twitter:image" content="https://www.mfallevoz.me/assets/og-image.jpg">
 		<link rel="stylesheet" href="./style.css">
 		<link rel="stylesheet" href="./assets/tailwind.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
 		<script src="./lang/fr.js" defer></script>
 		<script src="./lang/en.js" defer></script>
 		<script src="./script.js" defer></script>
@@ -83,7 +84,7 @@
 		</nav>
 
 		<div class="lang-toggle">
-			<button id="langBtn" class="lang-btn glass-arrow">FR</button>
+			<button id="langBtn" class="lang-btn glass-arrow" aria-label="Change language / Changer de langue">FR</button>
 		</div>
 
 		<main id="scroll-container">
@@ -138,7 +139,7 @@
 					</div>
 					<div class="project-card p-6 group hover:border-[var(--accent)] transition-colors duration-300" data-parallax data-speed="10">
 						<div class="w-full rounded-lg bg-gradient-to-br from-[#11203a] to-[#0b1b2d] flex items-center justify-center">
-							<img src="./assets/mockup.jpg" alt="Aperçu du site Cointribune — refonte frontend React" class="w-full h-auto rounded-lg">
+							<img loading="lazy" decoding="async" src="./assets/mockup.jpg" width="640" height="416" alt="Aperçu du site Cointribune — refonte frontend React" class="w-full h-auto rounded-lg">
 						</div>
 						<p class="text-slate-400 text-xs mt-3 text-center" data-i18n="aboutMockupCaption">Cointribune — React frontend redesign</p>
 					</div>
@@ -238,7 +239,7 @@
 
 						<a href="https://www.lecomptoir.co.jp" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/lecomptoir.svg" alt="Le Comptoir logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img loading="lazy" decoding="async" src="./assets/logos/lecomptoir.svg" alt="Le Comptoir logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
 							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
@@ -264,7 +265,7 @@
 
 						<a href="https://www.minnatopia.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/minnatopia.svg" alt="Minnatopia logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img loading="lazy" decoding="async" src="./assets/logos/minnatopia.svg" alt="Minnatopia logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
 							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
@@ -291,7 +292,7 @@
 
 						<a href="https://www.cointribune.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/cointribune.svg" alt="Cointribune logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img loading="lazy" decoding="async" src="./assets/logos/cointribune.svg" alt="Cointribune logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
 							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
@@ -319,7 +320,7 @@
 
 						<a href="https://www.thewalkingnerds.com" target="_blank" rel="noopener noreferrer" class="project-card block overflow-hidden group hover:border-[var(--accent)] transition-colors duration-300 h-[580px] flex flex-col justify-between relative">
 							<div class="overflow-hidden aspect-video bg-slate-950 flex items-center justify-center p-6 shrink-0 relative before:content-[''] before:absolute before:inset-0 before:m-auto before:h-2/3 before:w-2/3 before:rounded-full before:bg-white/10 before:blur-3xl group-hover:before:bg-white/20 group-hover:before:h-3/4 group-hover:before:w-3/4 transition-all duration-700 ease-in-out">
-								<img src="./assets/logos/twn.svg" alt="The Walking Nerds logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+								<img loading="lazy" decoding="async" src="./assets/logos/twn.svg" alt="The Walking Nerds logo" class="h-20 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-500">
 							</div>
 
 							<div class="flex-1 relative bg-[#071023]/40 overflow-hidden">
