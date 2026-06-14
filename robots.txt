@@ -1,0 +1,5 @@
+# robots.txt — https://www.mfallevoz.me
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mfallevoz.me/sitemap.xml
