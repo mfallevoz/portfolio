@@ -1,5 +1,8 @@
 :root {
   --accent: #F5A623;
+  /* Durée du fondu au changement de langue.
+     ⚠️ À garder synchronisée avec LANG_FADE_MS dans script.js (450 = 0.45s). */
+  --lang-fade: 0.45s;
 }
 
 html,
@@ -23,7 +26,7 @@ main {
     height: 100dvh;
     overflow-y: auto;
     overflow-x: hidden;
-    transition: opacity 0.22s ease, filter 0.22s ease;
+    transition: opacity var(--lang-fade) ease, filter var(--lang-fade) ease;
 }
 
 /* Fondu global au changement de langue */
@@ -122,6 +125,69 @@ nav.side {
 /* ---- Composants du Site ---- */
 .hero {
     background: linear-gradient(180deg,#071023 0%, #081426 60%);
+    position: relative; /* ancre le chevron de défilement en bas du hero */
+}
+
+/* ---- Flèches « verre dépoli » partagées (hero + slider), cohérentes avec la navbar ---- */
+.glass-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: #e6eef8;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(18px) saturate(1.7);
+    -webkit-backdrop-filter: blur(18px) saturate(1.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px rgba(2, 6, 23, 0.35);
+    transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-arrow:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 0 18px rgba(245, 166, 35, 0.35), 0 8px 28px rgba(2, 6, 23, 0.45);
+}
+
+/* Flèches du slider Projets */
+.slider-arrow {
+    width: 3.25rem;
+    height: 3.25rem;
+}
+.slider-arrow svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+.slider-arrow:hover {
+    transform: scale(1.06);
+}
+
+/* Chevron « défiler vers le bas » du hero (même langage visuel, plus petit) */
+.scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    width: 2.75rem;
+    height: 2.75rem;
+    animation: scroll-bounce 1.8s ease-in-out infinite;
+}
+
+.scroll-cue svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@keyframes scroll-bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50%      { transform: translate(-50%, 7px); }
+}
+
+/* Accessibilité : on fige le chevron si l'utilisateur réduit les animations */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-cue {
+        animation: none;
+    }
 }
 
 .panel {
@@ -144,6 +210,12 @@ nav.side {
 /* ---- Logique du Slider Projets ---- */
 #projects-slider {
     scrollbar-width: none;
+    /* Fondu de bord : largeurs pilotées par script.js selon la position de scroll.
+       0px = aucun fondu de ce côté ; une valeur > 0 estompe progressivement le bord. */
+    --fade-l: 0px;
+    --fade-r: 0px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent 100%);
 }
 #projects-slider::-webkit-scrollbar {
     display: none;
@@ -157,6 +229,14 @@ nav.side {
 
 [data-parallax] {
     will-change: transform;
+}
+
+/* Caret de l'effet machine à écrire : fixe pendant la frappe, clignotant à la fin.
+   Couleur héritée du titre (blanc) pour ressembler à un vrai curseur de saisie. */
+.type-caret {
+    color: inherit;
+    font-weight: 400;
+    margin-left: 2px;
 }
 
 .cursor-blink {
@@ -174,15 +254,12 @@ nav.side {
     z-index: 70;
 }
 
+/* Le look (verre, bordure, flou, couleur) vient de .glass-arrow.
+   Ici on ne garde que ce qui fait la « pilule » texte : padding et graisse. */
 .lang-btn {
-    background: var(--accent);
-    color: #000;
-    font-weight: 600;
     padding: 0.5rem 1rem;
-    border-radius: 9999px;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6);
-    transition: transform 0.2s ease;
 }
 
 .lang-btn:hover {
@@ -226,8 +303,8 @@ nav.side {
         height: clamp(440px, calc(100dvh - 12rem), 580px);
     }
     .pc-desc p {
-        font-size: 0.85rem;
-        line-height: 1.4;
+        font-size: 0.82rem;
+        line-height: 1.32;
     }
 
     /* En mobile, le hover ne pilote plus les cartes */

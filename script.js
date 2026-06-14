@@ -3,9 +3,15 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const container = document.querySelector('#scroll-container');
 
+// Respecte la préférence système « animations réduites » (accessibilité).
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Durées de défilement programmé (0 = saut instantané si les animations sont réduites).
+const SCROLL_DUR = prefersReducedMotion ? 0 : 0.7;   // navigation entre sections
+const SLIDER_DUR = prefersReducedMotion ? 0 : 0.4;   // flèches du slider projets
+
 // ---- Animations Parallaxe ----
 const parallaxEls = document.querySelectorAll('[data-parallax]');
-parallaxEls.forEach(el => {
+if (!prefersReducedMotion) parallaxEls.forEach(el => {
     const speed = parseFloat(el.dataset.speed) || 0;
     gsap.to(el, {
         yPercent: speed,
@@ -22,7 +28,7 @@ parallaxEls.forEach(el => {
 
 // ---- Animations d'apparition des éléments (Fade in + Slide up) ----
 const sections = gsap.utils.toArray('section');
-sections.forEach(sec => {
+if (!prefersReducedMotion) sections.forEach(sec => {
     const allElems = sec.querySelectorAll('h1, h2, h3, p, form, .project-card, #hero a, ul > li, article');
 
     // FIX ABSOLU : On filtre pour ne pas animer les éléments ENFANTS déjà inclus dans une carte ou un article
@@ -50,145 +56,111 @@ sections.forEach(sec => {
     });
 });
 
-// ---- Dictionnaire de Traductions (i18n) ----
-const translations = {
-    fr: {
-        navHero: "Accueil",
-        navAbout: "À propos",
-        navServices: "Compétences",
-        navProjects: "Projets",
-        navContact: "Contact",
-        heroText: "Salut ! Je suis ",
-        heroName: "Melchior Fallevoz",
-        subtitle: "Développeur Full-Stack",
-        cta: "Voir mes projets",
-        aboutTitle: "À propos",
-        aboutText1: "Je suis <b>développeur full-stack</b> avec <b>3+ ans</b> d'expérience à concevoir et livrer des plateformes web, des boutiques e-commerce et des workflows d'automatisation.",
-        aboutText2: "Je travaille sur toute la <b>stack</b> — des frontends React/Vue aux APIs backend — avec une vraie <b>sensibilité UI/UX</b> et le souci d'un code propre et maintenable.",
-        aboutText3: "Ce que j'apporte à une équipe :",
-        aboutText4: "<b>Autonomie de bout en bout</b> — je livre les fonctionnalités de l'interface au backend.",
-        aboutText5: "<b>Adaptation rapide</b> aux nouvelles stacks, bases de code et contextes clients.",
-        aboutText6: "<b>Expérience remote et internationale</b>, en français, anglais et vietnamien.",
-        aboutText7: "Nomade digital basé en Asie, <b>ouvert au remote et à la relocalisation</b>.",
-        aboutMockupCaption: "Cointribune — refonte frontend React",
-        servicesTitle: "Ce que je fais",
-        servicesIntro: "Les domaines que je couvre en tant que développeur full-stack.",
-        service1Title: "Développement Frontend",
-        service1Text: "Des interfaces responsive, accessibles et soignées.",
-        service2Title: "Backend & APIs",
-        service2Text: "Des APIs robustes et de la logique serveur.",
-        service3Title: "E-commerce",
-        service3Text: "Des boutiques en ligne construites de bout en bout.",
-        service4Title: "Automatisation & Intégrations",
-        service4Text: "Des workflows qui suppriment le travail manuel.",
-        projectsTitle: "Mes Projets",
-        project1Desc: "Maintenance et évolution d'une architecture e-commerce moderne (Shopify Headless avec surcouche Vue.js). Conception et automatisation des flux de données backend via Make et Airtable. Gestion opérationnelle et sécurisation des passerelles de paiement Stripe et Amazon Pay.",
-        project2Desc: "Maintenance évolutive de la boutique Shopify et développement de fonctionnalités sur-mesure. Création et intégration de blocs customs (Liquid, CSS, JS) pour adapter l'interface aux besoins du catalogue. Gestion opérationnelle du site au rythme des sorties officielles de cartes TCG.",
-        project3Desc: "Développement et maintenance évolutive des fonctionnalités d'un site média d'envergure. Travail en environnement Headless (CMS WordPress découplé avec un front-end en React). Optimisation des performances globales et de l'expérience utilisateur.",
-        project4Desc: "Intégration au sein de l'équipe de l'ESN pour la maintenance et l'évolution graphique d'un parc de sites multiclient. Résolution de tickets techniques en autonomie, optimisation responsive et corrections front-end sur différents CMS WordPress.",
-        contactTitle: "Me Contacter",
-        contactText: "Un poste ou un projet en tête ? Écrivez-moi, je réponds rapidement.",
-        formName: "Nom",
-        formEmail: "Email",
-        formMessage: "Message",
-        formSubmit: "Envoyer",
-        formSuccess: "✅ Merci ! Ton message a bien été envoyé.",
-        formError: "❌ Oups, une erreur est survenue. Essaie à nouveau.",
-        metaDesc: "Portfolio de Melchior Fallevoz, développeur full-stack (React, Vue, Node/PHP, Shopify) avec 3+ ans d'expérience en plateformes web, e-commerce et automatisation.",
-        metaKeywords: "développeur full-stack, développeur web, React, Vue, TypeScript, Shopify, Node, PHP, portfolio"
-    },
-    en: {
-        navHero: "Home",
-        navAbout: "About",
-        navServices: "Skills",
-        navProjects: "Projects",
-        navContact: "Contact",
-        heroText: "Hi! I'm ",
-        heroName: "Melchior Fallevoz",
-        subtitle: "Full-Stack Developer",
-        cta: "View my work",
-        aboutTitle: "About",
-        aboutText1: "I'm a <b>full-stack developer</b> with <b>3+ years</b> building and shipping web platforms, e-commerce stores, and automation workflows.",
-        aboutText2: "I work across the <b>full stack</b> — from React/Vue frontends to backend APIs — with a strong <b>UI/UX sensibility</b> and a focus on clean, maintainable code.",
-        aboutText3: "What I bring to a team:",
-        aboutText4: "<b>End-to-end ownership</b> — I ship features from interface to backend.",
-        aboutText5: "<b>Fast adaptation</b> to new stacks, codebases, and client contexts.",
-        aboutText6: "<b>Remote, international experience</b> in French, English, and Vietnamese.",
-        aboutText7: "Digital nomad based in Asia, <b>open to remote roles and relocation</b>.",
-        aboutMockupCaption: "Cointribune — React frontend redesign",
-        servicesTitle: "What I Do",
-        servicesIntro: "The areas I work across as a full-stack developer.",
-        service1Title: "Frontend Development",
-        service1Text: "Responsive, accessible, polished interfaces.",
-        service2Title: "Backend & APIs",
-        service2Text: "Robust APIs and server-side logic.",
-        service3Title: "E-commerce",
-        service3Text: "Online stores built end-to-end.",
-        service4Title: "Automation & Integrations",
-        service4Text: "Workflows that remove manual work.",
-        projectsTitle: "My Projects",
-        project1Desc: "Maintenance and evolution of a modern e-commerce architecture (Headless Shopify with a Vue.js frontend). Design and automation of backend data workflows using Make and Airtable. Handled operational management and security for Stripe and Amazon Pay payment gateways.",
-        project2Desc: "Maintenance and development of custom features for a Shopify storefront. Created and integrated custom blocks (Liquid, CSS, JS) tailored to catalog needs. Managed site operations aligned with official TCG card releases.",
-        project3Desc: "Development and feature maintenance for a major media website. Worked in a Headless environment (decoupled WordPress CMS with a React frontend). Optimized overall technical performance and user experience.",
-        project4Desc: "Joined the IT services agency team to handle maintenance and visual enhancements for a multi-client web fleet. Independently resolved technical tickets, optimized responsiveness, and implemented front-end fixes across various WordPress sites.",
-        contactTitle: "Contact Me",
-        contactText: "Have a role or project in mind? Send me a message and I'll get back to you quickly.",
-        formName: "Name",
-        formEmail: "Email",
-        formMessage: "Message",
-        formSubmit: "Send",
-        formSuccess: "✅ Thanks! Your message has been sent successfully.",
-        formError: "❌ Oops, something went wrong. Please try again.",
-        metaDesc: "Portfolio of Melchior Fallevoz, full-stack developer (React, Vue, Node/PHP, Shopify) with 3+ years building web platforms, e-commerce, and automation.",
-        metaKeywords: "full-stack developer, web developer, React, Vue, TypeScript, Shopify, Node, PHP, portfolio"
-    }
-};
+// ---- Dictionnaires de Traductions (i18n) ----
+// Les dictionnaires sont chargés depuis ./lang/<code>.js et s'enregistrent sur
+// window.translations. Pour ajouter une langue : créer ./lang/<code>.js puis
+// ajouter <script src="./lang/<code>.js" defer></script> dans index.html,
+// AVANT script.js. Aucune autre modification n'est nécessaire dans ce fichier.
+const translations = window.translations || {};
 
 // ---- Gestion de la Langue ----
-const browserLang = navigator.language || navigator.userLanguage;
-let currentLang = browserLang.startsWith('en') ? 'en' : 'fr';
+// L'ordre de bascule suit l'ordre de chargement des fichiers ./lang/<code>.js.
+const availableLangs = Object.keys(translations);
+const DEFAULT_LANG = availableLangs.includes('fr') ? 'fr' : (availableLangs[0] || 'fr');
+
+const browserLang = (navigator.language || navigator.userLanguage || '').slice(0, 2).toLowerCase();
+let currentLang = availableLangs.includes(browserLang) ? browserLang : DEFAULT_LANG;
+
+// Durée du fondu au changement de langue (ms).
+// ⚠️ À garder synchronisée avec --lang-fade dans style.css.
+const LANG_FADE_MS = 450;
 
 const target = document.getElementById("typewriter");
 const langBtn = document.getElementById('langBtn');
 let typingTimeout;
 
+// Langue suivante dans le cycle (sert au libellé du bouton ET à la bascule).
+function getNextLang() {
+    if (availableLangs.length < 2) return currentLang;
+    const i = availableLangs.indexOf(currentLang);
+    return availableLangs[(i + 1) % availableLangs.length];
+}
+
+// ---- Effet machine à écrire ----
+const TYPE_BASE_MS = 70;     // cadence de frappe de base
+const TYPE_JITTER_MS = 55;   // variation aléatoire pour un rythme « humain »
+const TYPE_PAUSE_MS = 260;   // pause après ponctuation et avant le prénom
+
+// Construit le caret (barre clignotante). Fixe pendant la frappe, clignotant une fois fini.
+function caret(blinking) {
+    return '<span class="type-caret' + (blinking ? ' cursor-blink' : '') + '">|</span>';
+}
+
+// Rend le hero : début en texte normal, prénom en doré, caret à la fin.
+function renderHero(typedText, typedName, blinking) {
+    const namePart = typedName
+        ? '<span class="text-[color:var(--accent)]">' + typedName + '</span>'
+        : '';
+    target.innerHTML = typedText + namePart + caret(blinking);
+}
+
 function typeWriter(text, name) {
     clearTimeout(typingTimeout);
-    let i = 0;
-    function step() {
-        if (i < text.length) {
-            target.innerHTML = text.substring(0, i + 1);
-            i++;
-            typingTimeout = setTimeout(step, 80);
-        } else if (i < text.length + name.length) {
-            target.innerHTML = text + '<span class="text-[color:var(--accent)]">' + name.substring(0, i - text.length + 1) + '</span>';
-            i++;
-            typingTimeout = setTimeout(step, 80);
-        } else {
-            target.innerHTML = text + '<span class="text-[color:var(--accent)]">' + name + '</span>' + '<span class="cursor-blink">|</span>';
-        }
+
+    // Accessibilité : pas d'animation si l'utilisateur préfère réduire les mouvements.
+    if (prefersReducedMotion) {
+        renderHero(text, name, true);
+        return;
     }
+
+    const full = text + name; // on tape le texte puis le prénom, sans interruption
+    let i = 0;
+
+    function step() {
+        const shownText = full.slice(0, Math.min(i, text.length));
+        const shownName = i > text.length ? full.slice(text.length, i) : '';
+
+        if (i >= full.length) {
+            renderHero(text, name, true); // terminé : caret clignotant
+            return;
+        }
+
+        renderHero(shownText, shownName, false); // en cours : caret fixe
+
+        // Délai jusqu'au caractère suivant, avec variation + petites pauses.
+        let delay = TYPE_BASE_MS + Math.random() * TYPE_JITTER_MS;
+        const lastChar = full[i - 1];
+        if (lastChar && '!?.,'.indexOf(lastChar) !== -1) delay += TYPE_PAUSE_MS; // après ponctuation
+        if (i === text.length) delay += TYPE_PAUSE_MS; // respiration juste avant le prénom
+
+        i++;
+        typingTimeout = setTimeout(step, delay);
+    }
+
     step();
 }
 
 function updateTexts() {
     document.documentElement.lang = currentLang;
-    langBtn.innerHTML = currentLang === 'fr' ? 'EN' : 'FR';
+    langBtn.innerHTML = getNextLang().toUpperCase();
+
+    const dict = translations[currentLang];
+    if (!dict) return; // dictionnaire non chargé : on laisse le HTML par défaut
 
     const metaDescription = document.querySelector('meta[name="description"]');
     const metaKeywords = document.querySelector('meta[name="keywords"]');
 
-    if (metaDescription && translations[currentLang].metaDesc) {
-        metaDescription.setAttribute('content', translations[currentLang].metaDesc);
+    if (metaDescription && dict.metaDesc) {
+        metaDescription.setAttribute('content', dict.metaDesc);
     }
-    if (metaKeywords && translations[currentLang].metaKeywords) {
-        metaKeywords.setAttribute('content', translations[currentLang].metaKeywords);
+    if (metaKeywords && dict.metaKeywords) {
+        metaKeywords.setAttribute('content', dict.metaKeywords);
     }
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-            el.innerHTML = translations[currentLang][key];
+        if (dict[key]) {
+            el.innerHTML = dict[key];
         }
     });
 }
@@ -197,9 +169,18 @@ let langSwitching = false;
 
 function switchLang() {
     if (langSwitching) return; // évite les double-clics pendant le fondu
+    if (availableLangs.length < 2) return; // une seule langue : rien à basculer
     langSwitching = true;
 
-    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    currentLang = getNextLang();
+
+    // Animations réduites : on bascule le texte instantanément, sans fondu.
+    if (prefersReducedMotion) {
+        updateTexts();
+        typeWriter(translations[currentLang].heroText, translations[currentLang].heroName);
+        langSwitching = false;
+        return;
+    }
 
     container.classList.add('lang-fade');
 
@@ -209,13 +190,15 @@ function switchLang() {
 
         requestAnimationFrame(() => {
             container.classList.remove('lang-fade');
-            setTimeout(() => { langSwitching = false; }, 250);
+            setTimeout(() => { langSwitching = false; }, LANG_FADE_MS);
         });
-    }, 220);
+    }, LANG_FADE_MS);
 }
 
 updateTexts();
-typeWriter(translations[currentLang].heroText, translations[currentLang].heroName);
+if (translations[currentLang]) {
+    typeWriter(translations[currentLang].heroText, translations[currentLang].heroName);
+}
 langBtn.addEventListener('click', switchLang);
 
 
@@ -239,7 +222,27 @@ navItems.forEach((item, i) => {
         e.preventDefault();
         const sect = document.querySelectorAll('section')[i];
         if (sect) {
-            gsap.to(container, { scrollTo: { y: sect.offsetTop }, duration: 0.7, ease: 'power2.out' });
+            gsap.to(container, { scrollTo: { y: sect.offsetTop }, duration: SCROLL_DUR, ease: 'power2.out' });
+        }
+    });
+});
+
+
+// ---- Défilement fluide pour les ancres internes (chevron du hero, CTA, etc.) ----
+// On exclut .nav-item (qui a déjà son propre handler) et on ignore les liens externes.
+function smoothScrollToSection(id) {
+    const sect = document.getElementById(id);
+    if (sect) {
+        gsap.to(container, { scrollTo: { y: sect.offsetTop }, duration: SCROLL_DUR, ease: 'power2.out' });
+    }
+}
+
+document.querySelectorAll('a[href^="#"]:not(.nav-item)').forEach(link => {
+    link.addEventListener('click', e => {
+        const id = link.getAttribute('href').slice(1);
+        if (document.getElementById(id)) {
+            e.preventDefault();
+            smoothScrollToSection(id);
         }
     });
 });
@@ -258,12 +261,15 @@ if (projectsSlider && nextProjectBtn && prevProjectBtn) {
     };
 
     nextProjectBtn.addEventListener('click', () => {
-        gsap.to(projectsSlider, { scrollLeft: `+=${getScrollAmount()}`, duration: 0.4, ease: 'power2.out' });
+        gsap.to(projectsSlider, { scrollLeft: `+=${getScrollAmount()}`, duration: SLIDER_DUR, ease: 'power2.out' });
     });
 
     prevProjectBtn.addEventListener('click', () => {
-        gsap.to(projectsSlider, { scrollLeft: `-=${getScrollAmount()}`, duration: 0.4, ease: 'power2.out' });
+        gsap.to(projectsSlider, { scrollLeft: `-=${getScrollAmount()}`, duration: SLIDER_DUR, ease: 'power2.out' });
     });
+
+    // Largeur du fondu appliqué sur un bord quand du contenu déborde de ce côté (px).
+    const EDGE_FADE = 72;
 
     function updateArrows() {
         const scrollLeft = projectsSlider.scrollLeft;
@@ -280,6 +286,15 @@ if (projectsSlider && nextProjectBtn && prevProjectBtn) {
         } else {
             nextProjectBtn.classList.remove('pointer-events-none', '!opacity-0');
         }
+
+        // Fondu de bord : on n'estompe un côté que s'il reste du contenu à atteindre
+        // de ce côté. Au départ → seulement à droite ; au milieu → des deux côtés ;
+        // tout à droite → seulement à gauche.
+        const hasOverflow = maxScroll > 8;
+        const fadeLeft = (hasOverflow && scrollLeft > 8) ? EDGE_FADE : 0;
+        const fadeRight = (hasOverflow && scrollLeft < maxScroll - 8) ? EDGE_FADE : 0;
+        projectsSlider.style.setProperty('--fade-l', fadeLeft + 'px');
+        projectsSlider.style.setProperty('--fade-r', fadeRight + 'px');
     }
 
     projectsSlider.addEventListener('scroll', updateArrows);
@@ -294,16 +309,10 @@ const mobileFocusQuery = window.matchMedia('(max-width: 768px)');
 
 if (projectsSlider) {
     const projectCards = Array.from(projectsSlider.querySelectorAll('.project-card'));
-    let focusTick = false;
+    let currentFocused = null;   // mémorise la carte active pour éviter les bascules inutiles
+    let settleTimer = null;      // debounce : on attend que le scroll se stabilise
 
-    function updateFocusedCard() {
-        focusTick = false;
-
-        if (!mobileFocusQuery.matches) {
-            projectCards.forEach(card => card.classList.remove('is-focused'));
-            return;
-        }
-
+    function computeBestCard() {
         const sliderRect = projectsSlider.getBoundingClientRect();
         const sliderCenter = sliderRect.left + sliderRect.width / 2;
 
@@ -314,22 +323,44 @@ if (projectsSlider) {
             const dist = Math.abs(r.left + r.width / 2 - sliderCenter);
             if (dist < bestDist) { bestDist = dist; best = card; }
         });
-
-        projectCards.forEach(card => card.classList.toggle('is-focused', card === best));
+        return best;
     }
 
-    function requestFocusUpdate() {
-        if (!focusTick) {
-            focusTick = true;
-            requestAnimationFrame(updateFocusedCard);
-        }
+    // N'écrit dans le DOM QUE si la carte gagnante a réellement changé.
+    // -> la classe is-focused n'est jamais retirée puis remise sur la même carte,
+    //    donc la transition CSS de 700ms ne redémarre pas pour rien.
+    function setFocused(card) {
+        if (card === currentFocused) return;
+        currentFocused = card;
+        projectCards.forEach(c => c.classList.toggle('is-focused', c === card));
     }
 
-    projectsSlider.addEventListener('scroll', requestFocusUpdate, { passive: true });
-    window.addEventListener('resize', requestFocusUpdate);
-    mobileFocusQuery.addEventListener('change', requestFocusUpdate);
-    window.addEventListener('load', requestFocusUpdate);
-    requestFocusUpdate();
+    function clearFocused() {
+        if (!currentFocused) return;
+        currentFocused = null;
+        projectCards.forEach(c => c.classList.remove('is-focused'));
+    }
+
+    function updateFocusedCard() {
+        if (!mobileFocusQuery.matches) { clearFocused(); return; }
+        setFocused(computeBestCard());
+    }
+
+    // Pendant le scroll, la carte la plus proche du centre oscille entre deux
+    // candidates au passage du milieu (inertie + scroll-snap). On ne tranche donc
+    // qu'une fois le défilement arrêté : un seul calcul, une seule animation.
+    function onSliderScroll() {
+        if (!mobileFocusQuery.matches) return;
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(updateFocusedCard, 120);
+    }
+
+    projectsSlider.addEventListener('scroll', onSliderScroll, { passive: true });
+    // resize / changement de breakpoint / load : pas d'oscillation, on applique direct
+    window.addEventListener('resize', updateFocusedCard);
+    mobileFocusQuery.addEventListener('change', updateFocusedCard);
+    window.addEventListener('load', updateFocusedCard);
+    updateFocusedCard();
 }
 
 
@@ -359,7 +390,7 @@ form.addEventListener("submit", async (e) => {
         formMessage.innerHTML = translations[currentLang].formError;
     }
 
-    gsap.to(formMessage, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" });
+    gsap.to(formMessage, { opacity: 1, y: 0, duration: prefersReducedMotion ? 0 : 0.6, ease: "power2.out" });
 });
 
 window.addEventListener('load', () => {
